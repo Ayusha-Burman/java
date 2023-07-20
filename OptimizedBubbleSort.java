@@ -17,7 +17,7 @@ public class OptimizedBubbleSort {
         }
         
         for(i=0;i<arr.length;i++)
-        {  swap=0;
+        {  
             for(j=0;j<arr.length-1-i;j++)
             {
                 if(arr[j]>arr[j+1])
@@ -28,18 +28,20 @@ public class OptimizedBubbleSort {
                     arr[j+1]=temp;
                 }
             }
-        }
-        if(swap==0)
+            if(swap==0)
         {
             System.out.println("THE ARRAY WAS SORTED");
+            break;
         }
-        else{
+        }
+        
+        
             System.out.println("THE SORTED ARRAY IS: ");
             for(i=0;i<arr.length;i++)
             {
                 System.out.print(arr[i]+" ");
             }
-        }
+        
         
     
     }
