@@ -11,14 +11,14 @@ public class OptimizedBubbleSort {
         int[] arr=new int[n];
         int swap=0;
         System.out.println("Enter "+n+" elements of the array");
-        for(i=0;i<arr.length;i++)
+        for(i=0;i<n;i++)
         {
             arr[i]=sc.nextInt();
         }
         
-        for(i=0;i<arr.length;i++)
+        for(i=0;i<n-1;i++)
         {  
-            for(j=0;j<arr.length-1-i;j++)
+            for(j=0;j<n-1-i;j++)
             {
                 if(arr[j]>arr[j+1])
                 {
@@ -29,10 +29,10 @@ public class OptimizedBubbleSort {
                 }
             }
             if(swap==0)
-        {
+           {
             System.out.println("THE ARRAY WAS SORTED");
             break;
-        }
+           }
         }
         
         

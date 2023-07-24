@@ -7,15 +7,16 @@ public class BubbleSort
         int n=0;
         int i=0,j=0;
         int temp=0;
-        System.out.println("Enter the size of the  array");
+        System.out.println("Enter the size of the  array");//n=5
         n=sc.nextInt();
         int[] arr=new int[n];
-        System.out.println("Enter "+n+" elements of the array");
+        System.out.println("Enter "+n+" elements of the array");//arr=[5,4,1,3,2]
+        //input
         for(i=0;i<arr.length;i++)
         {
             arr[i]=sc.nextInt();
         }
-        
+        //sorting
         for(i=0;i<arr.length;i++)
         {
             for(j=i+1;j<arr.length;j++)
