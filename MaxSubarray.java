@@ -10,7 +10,6 @@ public class MaxSubarray {
         {
             arr[i]=sc.nextInt();
         }
-        System.out.println("Printing subarrays:");
         int[] subarray=new int[n];
         int maxSum=Integer.MIN_VALUE;
         int currSum=0;
