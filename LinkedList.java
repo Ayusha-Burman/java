@@ -100,6 +100,29 @@ public class LinkedList {
 
         }
     }
+    public int removeFirst()
+    {
+        int val=0;
+        if(head==null)
+        {
+            System.out.println("Empty Linked list");
+            val = Integer.MIN_VALUE;
+        }
+        else if(head.next==null)
+        {
+            size--;
+           val=head.data;
+           head=tail=null;
+
+        }
+        else
+        {
+            size--;
+            val=head.data;
+            head=head.next;
+        }
+        return  val;
+    }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
@@ -112,5 +135,9 @@ public class LinkedList {
         ll.addMiddle(5);
         ll.printLinkedList();
         System.out.println("\nSize of the linked list is: "+size);
+        int deletedNode=ll.removeFirst();
+        System.out.println("deleted node is: "+deletedNode);
+        System.out.println("\nSize of the linked list is: "+size);
+        ll.printLinkedList();
     }
 }
