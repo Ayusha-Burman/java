@@ -100,6 +100,8 @@ public class LinkedList {
 
         }
     }
+
+    //removing first element in the linked list
     public int removeFirst()
     {
         int val=0;
@@ -123,6 +125,37 @@ public class LinkedList {
         }
         return  val;
     }
+
+   //removing last element in the linked list
+   public int removeLast()
+   {
+    int val=0;
+    if(head==null)
+        {
+            System.out.println("Empty Linked list");
+            val = Integer.MIN_VALUE;
+        }
+       else if(head.next==null)
+        {
+            size--;
+           val=head.data;
+           head=tail=null;
+
+        }
+        else
+        {
+            size--;
+            val=tail.data;
+            Node temp=head;
+            while(temp.next.next != null)
+            {
+                temp=temp.next;
+            }
+            tail=temp;
+            tail.next=null;
+        } 
+        return val;
+   }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
@@ -136,8 +169,11 @@ public class LinkedList {
         ll.printLinkedList();
         System.out.println("\nSize of the linked list is: "+size);
         int deletedNode=ll.removeFirst();
-        System.out.println("deleted node is: "+deletedNode);
+        System.out.println("\ndeleted node is: "+deletedNode);
         System.out.println("\nSize of the linked list is: "+size);
         ll.printLinkedList();
+        System.out.println("\ndeleted node is: "+ll.removeLast());
+        ll.printLinkedList();
+        System.out.println("\nSize of the linked list is: "+size);
     }
 }
