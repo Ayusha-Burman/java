@@ -156,24 +156,62 @@ public class LinkedList {
         } 
         return val;
    }
+
+   public int Search(int key)
+   {
+    Node temp=head;
+    int index=1;
+    while(temp!=null)
+    {
+        if(temp.data==key)
+        {
+            return index;
+        }
+        else
+        {
+         index++;
+         temp=temp.next;
+        }
+       
+    }
+    return -1; 
+   }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
         LinkedList ll = new LinkedList();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addLast(3);
-        ll.addLast(4);
+        ll.addFirst(20);
+        ll.addFirst(10);
+        ll.addLast(30);
+        ll.addLast(40);
+        ll.addLast(58);
+        ll.addLast(86);
+        ll.addLast(77);
+        ll.addLast(89);
+        ll.addLast(92);
+        ll.addLast(102);
         ll.printLinkedList();
-        ll.addMiddle(5);
-        ll.printLinkedList();
-        System.out.println("\nSize of the linked list is: "+size);
-        int deletedNode=ll.removeFirst();
-        System.out.println("\ndeleted node is: "+deletedNode);
-        System.out.println("\nSize of the linked list is: "+size);
-        ll.printLinkedList();
-        System.out.println("\ndeleted node is: "+ll.removeLast());
-        ll.printLinkedList();
-        System.out.println("\nSize of the linked list is: "+size);
+        // ll.addLast(4);
+        // ll.printLinkedList();
+        // ll.addMiddle(5);
+        // ll.printLinkedList();
+        // System.out.println("\nSize of the linked list is: "+size);
+        // int deletedNode=ll.removeFirst();
+        // System.out.println("\ndeleted node is: "+deletedNode);
+        // System.out.println("\nSize of the linked list is: "+size);
+        // ll.printLinkedList();
+        // System.out.println("\ndeleted node is: "+ll.removeLast());
+        // ll.printLinkedList();
+        // System.out.println("\nSize of the linked list is: "+size);
+        int result=ll.Search(58);
+        if(result==-1)
+        {
+          System.out.println("\nKey not found");
+        }
+        else
+        {
+          System.out.println("\nKey found at index: "+result);
+        }
+        
     }
 }
