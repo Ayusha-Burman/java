@@ -63,7 +63,7 @@ public class LinkedList {
         }
         else
         {
-           System.out.println("Printing Linked List");
+           System.out.println("\nPrinting Linked List");
            while(tempNode.next != null)
            {
              System.out.print(tempNode.data+"->");
@@ -202,6 +202,22 @@ public class LinkedList {
    {
       return helper(head, key);
    }
+
+
+   public void reverse()
+   {
+      Node prev=null;
+      Node curr=tail=head;
+      Node next;
+      while(curr!=null)
+      {
+        next=curr.next;
+        curr.next=prev;
+        prev=curr;
+        curr=next;
+      }
+      head=prev;
+   }
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
@@ -235,8 +251,12 @@ public class LinkedList {
        ll.addLast(4);
        ll.addLast(5);
        ll.printLinkedList();
-       System.out.println();
-        System.out.println(ll.recSearch(10));
+       ll.reverse();
+       ll.printLinkedList();
+    
+       //System.out.println();
+       //System.out.println(ll.recSearch(10));
+       
         
     }
 }
