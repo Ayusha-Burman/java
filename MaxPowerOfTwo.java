@@ -2,8 +2,8 @@ import java.util.*;
 public class MaxPowerOfTwo {
     public static void main(String args[])
     {
-        int a=7;
-        int b=12;
+        int a=10;
+        int b=20;
         int counter=0;
         int maxcounter=Integer.MIN_VALUE;
         int finalnum=0;
